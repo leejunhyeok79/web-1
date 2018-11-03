@@ -1,0 +1,44 @@
+
+<html>
+<head>
+	<title>animation</title>
+	<style>
+		body{margin:0;}
+		#monitor{/* display:none; */ text-align:center; width:100px; height:40px; color:white; background: red; position: fixed; right:0;}
+	</style>
+</head>
+<body>
+	<div id="monitor"></div>
+	<img src="1.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="2.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="3.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="4.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="5.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="6.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="7.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="8.jpg" style="width:1000px;margin-left: auto; margin-right: auto; display: block;">
+	<img src="9.jpg" style="width:1000px; margin-left: auto; margin-right: auto; display: block;">
+	<video id="mainVideo" src="animation.mp4" controls width="1920" height="1080" style="margin-left: auto; margin-right: auto; display: block;"></video>
+	<script type="text/javascript">
+		
+		window.onscroll = function(){
+			var t = document.documentElement.scrollTop + document.body.scrollTop;
+			monitor.innerHTML = t + "px";
+
+			if(t > 47000){
+				document.body.style.overflow = "hidden";
+				document.body.style.background = "black";
+				mainVideo.style.width = window.innerWidth + "px";
+				mainVideo.style.height = window.innerHeight + "px";
+				mainVideo.play();
+				mainVideo.style.bottom = "0px";
+				mainVideo.style.position = "fixed";
+			}
+
+			mainVideo.onended = function(){
+				window.location.href = "./open.html";
+			}
+		}
+	</script>
+</body>
+</html>
