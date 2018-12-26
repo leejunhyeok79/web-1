@@ -1,0 +1,49 @@
+
+<html>
+<head>
+	<title>animation</title>
+	<style>
+		body{margin:0;}
+		#monitor{ display:none;  text-align:center; width:100px; height:40px; color:white; background: red; position: fixed; right:0;}
+		.comic{ width:1000px; display: block; margin: auto; }
+	</style>
+</head>
+<body>
+	<div id="monitor"></div>
+	<img src="1.jpg" class="comic">
+	<img src="2.jpg" class="comic">
+	<img src="3.jpg" class="comic">
+	<img src="4.jpg" class="comic">
+	<img src="5.jpg" class="comic">
+	<img src="6.jpg" class="comic">
+	<img src="7.jpg" class="comic">
+	<img src="8.jpg" class="comic">
+	<img src="9.jpg" class="comic">
+	<object data="https://player.vimeo.com/video/302695625" style="width:1280px; height:720px;margin-left: auto; margin-right: auto; display: block;"></object>
+	<img src="10.jpg" class="comic">
+
+
+	
+	<script type="text/javascript">
+		
+		window.onscroll = function(){
+			var t = document.documentElement.scrollTop + document.body.scrollTop;
+			monitor.innerHTML = t + "px";
+
+			if(t > 148800){
+				document.body.style.overflow = "hidden";
+				document.body.style.background = "black";
+				mainVideo.style.width = window.innerWidth + "px";
+				mainVideo.style.height = window.innerHeight + "px";
+				mainVideo.play();
+				mainVideo.style.bottom = "0px";
+				mainVideo.style.position = "fixed";
+			}
+
+			mainVideo.onended = function(){
+				window.location.href = "./index.html";
+			}
+		}
+	</script>
+</body>
+</html>
